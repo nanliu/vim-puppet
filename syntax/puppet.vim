@@ -1,11 +1,8 @@
 " puppet syntax file
-" Filename:     puppet.vim
-" Language:     puppet configuration file 
-" Maintainer:   Luke Kanies <luke@madstop.com>
-" URL:          https://github.com/puppetlabs/puppet/blob/master/ext/vim/syntax/puppet.vim
-" Last Change: 
-" Version:      
-"
+" Filename:   puppet.vim
+" Language:   Puppet
+" Maintainer: Luke Kanies <luke@madstop.com>
+" URL:        https://github.com/puppetlabs/puppet/blob/master/ext/vim/syntax/puppet.vim
 
 " Copied from the cfengine, ruby, and perl syntax files
 " For version 5.x: Clear all syntax items
@@ -16,8 +13,8 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-syn region  puppetDefine        start="^\s*\(class\|define\|site\|node\)\s+" end="{" contains=puppetDefType,puppetDefName,puppetDefArguments
-syn match   puppetDefType       "\(class\|define\|site\|node\|inherits\)" contained
+syn region  puppetDefine        start="^\s*\(class\|define\|node\)\s+" end="{" contains=puppetDefType,puppetDefName,puppetDefArguments
+syn match   puppetDefType       "\(class\|define\|node\|inherits\)" contained
 syn match   puppetInherits      "inherits" contained
 syn region  puppetDefArguments  start="(" end=")\s*" contains=puppetArgument
 syn match   puppetArgument      "\w\+" contained
